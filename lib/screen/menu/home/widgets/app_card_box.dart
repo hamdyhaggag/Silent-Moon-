@@ -1,0 +1,102 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../../utils/color.dart';
+
+class AppCardBox extends StatelessWidget {
+  final Color? color;
+  final String? svg;
+  final String? type;
+  final String? duration;
+  final String? title;
+
+  const AppCardBox(
+      {this.color, this.svg, this.type, this.duration, this.title, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final brightness = getBrightness(color!);
+    final textColor =
+        brightness == Brightness.dark ? Colors.white : Colors.black;
+
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 10),
+      height: 210,
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: const BorderRadius.all(Radius.circular(10)),
+      ),
+      child: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Align(
+              alignment: Alignment.topRight,
+              child: ClipRRect(
+                borderRadius: const BorderRadius.only(
+                  topRight: Radius.circular(20),
+                ),
+                child: SvgPicture.asset(
+                  'assets/images/resource/$svg.svg',
+                  fit: BoxFit.contain,
+                  width: 100,
+                  height: 100,
+                ),
+              ),
+            ),
+            Container(
+              width: 130,
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title!,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleMedium!
+                        .copyWith(color: textColor),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    duration!,
+                    style: Theme.of(context)
+                        .textTheme
+                        .labelSmall!
+                        .copyWith(color: textColor),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: brightness == Brightness.dark
+                          ? Colors.white
+                          : Colors.black,
+                      borderRadius: const BorderRadius.all(Radius.circular(25)),
+                    ),
+                    height: 35,
+                    width: 70,
+                    child: Center(
+                      child: Text(
+                        'Start',
+                        style: Theme.of(context).textTheme.labelSmall!.copyWith(
+                            color: brightness != Brightness.dark
+                                ? Colors.white
+                                : Colors.black),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
