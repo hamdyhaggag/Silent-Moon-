@@ -1,4 +1,3 @@
-![1732238804004](image/README/1732238804004.png)
 
 <p align="center">
     <img src="https://badgen.net/badge/Flutter/3.19.3/blue" alt="Flutter Version" style="max-width: 100%;">
@@ -44,20 +43,6 @@ This project is built using the following technologies:
 └── pubspec.yaml         # Flutter project configuration  
 ```
 
-## 🖼️ Screenshot
-
-| Light Theme                | Dark Theme                 |
-|----------------------------|----------------------------|
-| ![1](image/README/1.png)   | ![2](image/README/2.png)   |
-| ![3](image/README/3.png)   | ![4](image/README/4.png)   |
-| ![5](image/README/5.png)   | ![6](image/README/6.png)   |
-| ![7](image/README/7.png)   | ![8](image/README/8.png)   |
-| ![9](image/README/9.png)   | ![10](image/README/10.png) |
-| ![11](image/README/11.png) | ![12](image/README/12.png) |
-| ![13](image/README/13.png) | ![14](image/README/14.png) |
-| ![15](image/README/15.png) | ![16](image/README/16.png) |
-| ![17](image/README/17.png) | ![18](image/README/18.png) |
-| ![19](image/README/19.png)  | ![20](image/README/20.png) |
 
 ## License
 
